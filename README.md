@@ -3,6 +3,8 @@ Map directory file structure into a JavaScript object
 
 ## Install
 
+[![NPM](https://nodei.co/npm/node-map-directory.png)](https://www.npmjs.com/package/node-map-directory)
+
 ```
 $ npm install node-map-directory
 ```
@@ -11,7 +13,7 @@ $ npm install node-map-directory
 
 ```js
 var mapDir = require('node-map-directory');
-var currentDirMap = mapDir('./');
+var currentDirMap = mapDir();
 
 /* You will get an array of file and directory objects
 
