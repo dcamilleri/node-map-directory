@@ -1,2 +1,69 @@
 # node-map-directory
-Map directory structure into a JavaScript object
+Map directory file structure into a JavaScript object
+
+## Install
+
+```
+$ npm install node-map-directory
+```
+
+## Usage
+
+```js
+var mapDir = require('node-map-directory');
+var currentDirMap = mapDir('./');
+
+/* You will get an array of file and directory objects
+
+  Directory structure
+  - currentDir
+    - index.html
+    - scripts
+      - myScript.js
+
+  Output:
+  [
+    {
+      name: 'index',
+      extension: '.html',
+      type: 'file'
+    },
+    {
+      name: 'scripts',
+      type: 'dir',
+      children: [
+        {
+          name: 'scripts',
+          extension: '.js',
+          type: 'file'
+        }
+      ]
+    }
+  ]
+*/
+```
+
+## API
+
+### mapDir(directory, toIgnore)
+
+#### options
+
+##### directory
+
+Type: `String`  
+Default: `./`
+
+The root directory to get the map from.
+
+##### toIgnore
+
+Type: `array`  
+Default: `['node_modules', 'bower_components']`
+
+The directories and files to exclude from mapping. 
+
+## License
+
+MIT © [Dorian Camilleri](https://github.com/dcamilleri>)
+
