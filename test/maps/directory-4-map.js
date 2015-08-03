@@ -5,10 +5,6 @@ var directoryMap = {
       name: 'gulpfile',
       extension: '.js',
       type: 'file'
-    },
-    {
-      name: 'src',
-      type: 'dir'
     }
   ]
 };
