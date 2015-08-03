@@ -35,7 +35,7 @@ var currentDirMap = mapDir();
       type: 'dir',
       children: [
         {
-          name: 'scripts',
+          name: 'myScript',
           extension: '.js',
           type: 'file'
         }
