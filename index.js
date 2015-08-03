@@ -5,6 +5,6 @@ var ignoredDirs = require('./lib/utils/ignored-dirs');
 
 module.exports = function(directory, ignoreArgs) {
   var currentDir = directory || process.cwd();
-  var toIgnore = ignoreArgs || ignoredDirs;
+  var toIgnore = ignoreArgs ? ignoredDirs.concat(ignoreArgs) : ignoredDirs;
   return mapDir(currentDir, toIgnore);
 };
