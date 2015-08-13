@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/dcamilleri/node-map-directory.git"
   },
+  "engines" : { 
+    "node" : ">=0.12"
+  },
   "keywords": [
     "node",
     "map",
