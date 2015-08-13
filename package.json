@@ -1,6 +1,6 @@
 {
   "name": "node-map-directory",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Map directory structure into a JavaScript object",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "chai": "^3.2.0",
+    "chai-as-promised": "^5.1.0",
     "mocha": "^2.2.5"
   }
 }

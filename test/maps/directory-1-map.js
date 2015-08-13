@@ -3,7 +3,14 @@ var directoryMap = {
   [
     {
       name: 'fonts',
-      type: 'dir'
+      type: 'dir',
+      children: [
+        {
+          name: 'font',
+          extension: '.woff',
+          type: 'file'
+        }
+      ]
     },
     {
       name: 'index',
