@@ -6,7 +6,7 @@ var expect = require('chai').expect;
 var join = require('../lib/utils/join');
 var mapDir = require('../index');
 
-describe('Syncronous API Testing', function() {
+describe('Asyncronous/Syncronous API Testing', function() {
   it('should return a valid object tree when a directory is passed', function () {
     var exampleDir = join(__dirname, 'directories/directory-1');
     var dirMap = mapDir(exampleDir, null, false);
