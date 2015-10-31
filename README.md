@@ -4,6 +4,7 @@ Asyncronously map directory file structure into a JavaScript object
 ## Install
 
 [![NPM](https://nodei.co/npm/node-map-directory.png)](https://www.npmjs.com/package/node-map-directory)
+[![Build Status](https://travis-ci.org/dcamilleri/node-map-directory.svg)](https://travis-ci.org/dcamilleri/node-map-directory)
 
 ```
 $ npm install node-map-directory
