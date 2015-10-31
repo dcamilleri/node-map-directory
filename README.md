@@ -64,7 +64,7 @@ The root directory to get the map from.
 ##### toIgnore
 
 Type: `array`  
-Default: `['node_modules', 'bower_components']`
+Default: `['node_modules', 'bower_components', '.ignored_file']`
 
 The directories and files to exclude from mapping. 
 

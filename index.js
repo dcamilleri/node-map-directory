@@ -1,7 +1,7 @@
 'use strict';
 
 var mapDir = require('./lib/map-dir');
-var ignoredDirs = require('./lib/utils/ignored-dirs');
+var ignoredDirs = require('./lib/utils/default-ignored');
 
 module.exports = function(directory, ignoreArgs, async) {
   var currentDir = directory || process.cwd();
