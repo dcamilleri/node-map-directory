@@ -53,14 +53,14 @@ describe('Asyncronous/Syncronous API Testing', function() {
 
   it('should ignore files passed as arguments', function () {
     var exampleDir = join(__dirname, 'directories/directory-3');
-    var dirMap = mapDir(exampleDir, ['index.html', 'travis.yml'], false);
+    var dirMap = mapDir(exampleDir, ['index.html', 'travis.yml', '.ignored_file'], false);
     var realDirMap = require('./maps/directory-3-map');
 
     // Sync
     expect(dirMap).to.deep.equal(realDirMap);
 
     // Async
-    return mapDir(exampleDir, ['index.html', 'travis.yml'])
+    return mapDir(exampleDir, ['index.html', 'travis.yml', '.ignored_file'])
       .then(function(asyncDirMap) {
         expect(asyncDirMap).to.deep.equal(realDirMap);
       });
