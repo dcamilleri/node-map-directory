@@ -4,6 +4,7 @@ Asyncronously map directory file structure into a JavaScript object
 ## Install
 
 [![NPM](https://nodei.co/npm/node-map-directory.png)](https://www.npmjs.com/package/node-map-directory)
+
 [![Build Status](https://travis-ci.org/dcamilleri/node-map-directory.svg)](https://travis-ci.org/dcamilleri/node-map-directory)
 
 ```
@@ -14,7 +15,7 @@ $ npm install node-map-directory
 
 ```js
 var mapDir = require('node-map-directory');
-mapDir()
+mapDir('./')
   .then(function(currentDirMap) {
     // some code
   });
@@ -68,20 +69,6 @@ Type: `array`
 Default: `['node_modules', 'bower_components', '.ignored_file']`
 
 The directories and files to exclude from mapping. 
-
-##### async
-
-Type: `boolean`  
-Default: `true`
-
-Decide wether the call is asyncronous or not. It is by default.
-
-Note: the syncronous way is the following
-
-```js
-var mapDir = require('node-map-directory');
-var currentDirMap mapDir('./', null, false);
-```
 
 ## License
 
