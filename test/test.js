@@ -6,16 +6,12 @@ var expect = require('chai').expect;
 var join = require('../lib/utils/join');
 var mapDir = require('../index');
 
-describe('Asyncronous/Syncronous API Testing', function() {
+describe('Asyncronous API Testing', function() {
   it('should return a valid object tree when a directory is passed', function () {
     var exampleDir = join(__dirname, 'directories/directory-1');
     var dirMap = mapDir(exampleDir, null, false);
     var realDirMap = require('./maps/directory-1-map');
 
-    // Sync
-    expect(dirMap).to.deep.equal(realDirMap);
-
-    // Async
     return mapDir(exampleDir)
       .then(function(asyncDirMap) {
         expect(asyncDirMap).to.deep.equal(realDirMap);
@@ -26,10 +22,6 @@ describe('Asyncronous/Syncronous API Testing', function() {
     var exampleDir = join(__dirname, 'directories/empty-directory');
     var dirMap = mapDir(exampleDir, null, false);
 
-    // Sync
-    expect(dirMap.length).to.equal(0);
-
-    // Async
     return mapDir(exampleDir)
       .then(function(asyncDirMap) {
         expect(asyncDirMap.length).to.equal(0);
@@ -41,10 +33,6 @@ describe('Asyncronous/Syncronous API Testing', function() {
     var dirMap = mapDir(exampleDir, ['node_modules', 'bower_components', 'idea'], false);
     var realDirMap = require('./maps/directory-2-map');
 
-    // Sync
-    expect(dirMap).to.deep.equal(realDirMap);
-
-    // Async
     return mapDir(exampleDir, ['node_modules', 'bower_components', 'idea'])
       .then(function(asyncDirMap) {
         expect(asyncDirMap).to.deep.equal(realDirMap);
@@ -56,10 +44,6 @@ describe('Asyncronous/Syncronous API Testing', function() {
     var dirMap = mapDir(exampleDir, ['index.html', 'travis.yml', '.ignored_file'], false);
     var realDirMap = require('./maps/directory-3-map');
 
-    // Sync
-    expect(dirMap).to.deep.equal(realDirMap);
-
-    // Async
     return mapDir(exampleDir, ['index.html', 'travis.yml', '.ignored_file'])
       .then(function(asyncDirMap) {
         expect(asyncDirMap).to.deep.equal(realDirMap);
@@ -71,10 +55,6 @@ describe('Asyncronous/Syncronous API Testing', function() {
     var dirMap = mapDir(exampleDir, ['index.html', 'node_modules'], false);
     var realDirMap = require('./maps/directory-4-map');
 
-    // Sync
-    expect(dirMap).to.deep.equal(realDirMap);
-
-    // Async
     return mapDir(exampleDir, ['index.html', 'node_modules'])
       .then(function(asyncDirMap) {
         expect(asyncDirMap).to.deep.equal(realDirMap);
@@ -86,10 +66,6 @@ describe('Asyncronous/Syncronous API Testing', function() {
     var dirMap = mapDir(exampleDir, ['index.html', 'gulpfile.js'], false);
     var realDirMap = require('./maps/directory-5-map');
 
-    // Sync
-    expect(dirMap).to.deep.equal(realDirMap);
-
-    // Async
     return mapDir(exampleDir, ['index.html', 'gulpfile.js'])
       .then(function(asyncDirMap) {
         expect(asyncDirMap).to.deep.equal(realDirMap);

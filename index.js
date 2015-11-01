@@ -3,20 +3,14 @@
 var mapDir = require('./lib/map-dir');
 var ignoredDirs = require('./lib/utils/default-ignored');
 
-module.exports = function(directory, ignoreArgs, async) {
+module.exports = function(directory, ignoreArgs) {
   var currentDir = directory || process.cwd();
   var toIgnore = ignoreArgs ? ignoreArgs : ignoredDirs;
-  var isAsync = async === undefined;
-  if(isAsync) {
-    return new Promise(function(resolve, reject) {
-      try {
-        var map = mapDir(currentDir, toIgnore);
-        resolve(map);
-      } catch(error) {
-        reject(error);
-      }
-    });
-  } else {
-    return mapDir(currentDir, toIgnore);
-  }
+  return new Promise(function(resolve, reject) {
+    try {
+      resolve(mapDir(currentDir, toIgnore));
+    } catch(error) {
+      reject(error);
+    }
+  });
 };

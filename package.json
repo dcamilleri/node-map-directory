@@ -17,7 +17,8 @@
     "node",
     "map",
     "directory",
-    "structure"
+    "structure",
+    "asynchronous"
   ],
   "author": "Dorian Camilleri",
   "license": "MIT",
